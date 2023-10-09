@@ -10,13 +10,22 @@ local ntree = require('nvim-tree')
 
 -- OR setup with some options
 ntree.setup({
-    auto_reload_on_write = true, 
-    -- sort_by = "case_sensitive",
+    sync_root_with_cwd = true,
+    respect_buf_cwd = true,
+    update_focused_file = {
+      enable = true,
+      update_root = true
+    },
+    auto_reload_on_write = true,
+
     renderer = {
     group_empty = true,
     },
     filters = {
-    dotfiles = true,
+        dotfiles = false,
+        git_clean = false,
+        no_buffer = false,
+        custom = { '__pycache__', '.DS_Store' },
     },
     git = {
         enable = true,
@@ -24,4 +33,5 @@ ntree.setup({
       timeout = 500,
     }
 })
+
 ntree.sync_root_with_cwd = true

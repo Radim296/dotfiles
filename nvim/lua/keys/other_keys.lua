@@ -2,6 +2,7 @@ vim.g.mapleader = ' '
 local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
 
+
 -- vim.keymap.set('n', 'H', ':tabprev<CR>')
 -- vim.keymap.set('n', 'L', ':tabnext<CR>')
 
